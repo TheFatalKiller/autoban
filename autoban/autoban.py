@@ -13,8 +13,8 @@ class AutoBan(commands.Cog):
         if member.id in self.bans:
             embed = discord.Embed(title="AutoBanned", description=f"You have been AutoBanned in **{guild.name}**, DM **Fatal#0007** to appeal your removal from banlist.", color=self.bot.main_color)
             await member.send(embed=embed)
-            await guild.ban(member, reason="AutoBanned by being placed on the AutoBan List by Fatal")
             await channel.send(f"{member} was autobanned, <@199622722660204545>")
+            await guild.ban(member, reason="AutoBanned by being placed on the AutoBan List by Fatal")
 
 def setup(bot):
     bot.add_cog(AutoBan(bot))
