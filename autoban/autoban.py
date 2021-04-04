@@ -7,7 +7,7 @@ class AutoBan(commands.Cog):
         self.bans = [767398969147392030, 531602381591543818]
 
     @commands.Cog.listener()
-    async def on_member_join(self, member):
+    async def on_member_join(self, ctx, member):
         guild = member.guild
         if member.id in self.bans:
             embed = discord.Embed(title="AutoBanned", description="You have been AutoBanned in **{ctx.guild.name}**, DM **Fatal#0007** to appeal your removal from banlist.", color=self.bot.main_color)
