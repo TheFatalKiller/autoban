@@ -10,6 +10,8 @@ class AutoBan(commands.Cog):
     async def on_member_join(self, member):
         guild = member.guild
         if member.id in self.bans:
+            embed = discord.Embed(title="AutoBan", description="You have been AutoBanned in **{guild.name}**, DM **Fatal#0007** to appeal your removal from banlist.", color=self.bot.main_color)
+            await member.send(embed=embed)
             await guild.ban(member, reason="AutoBanned due to AutoBan List")
 
 def setup(bot):
