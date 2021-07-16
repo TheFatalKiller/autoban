@@ -9,12 +9,12 @@ class AutoBan(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         guild = member.guild
-        channel = self.bot.get_channel(834839320115675230)
+        channel = self.bot.get_channel(850490081659715608)
         if member.id in self.bans:
             embed = discord.Embed(title="AutoBanned", description=f"You have been AutoBanned in **{guild.name}**, appeal your ban by visiting this forum: https://forms.gle/ty29zXraHfxHQpkx6", color=self.bot.main_color)
             em = discord.Embed(title="Autoban Logs", description=f"{member} was autobanned")
             await member.send(embed=embed)
-            await channel.send("<@199622722660204545>")
+            await channel.send("<@455050132774191154>")
             await channel.send(embed=em)
             await guild.ban(member, reason="AutoBanned by being placed on the AutoBan List")
 def setup(bot):
